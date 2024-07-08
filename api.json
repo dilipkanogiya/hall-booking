@@ -1,0 +1,157 @@
+{
+  "info": {
+    "name": "Hall Booking API",
+    "description": "API for managing hall bookings",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create a Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"John Doe\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/customers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers"]
+        },
+        "description": "Creates a new customer with the provided name."
+      },
+      "response": []
+    },
+    {
+      "name": "List all Customers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/customers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers"]
+        },
+        "description": "Lists all customers stored in the system."
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Room",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"seats\": 50, \"amenities\": [\"Projector\", \"Whiteboard\"], \"price\": 100}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/rooms",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["rooms"]
+        },
+        "description": "Creates a new room with the specified seats, amenities, and price per hour."
+      },
+      "response": []
+    },
+    {
+      "name": "Book a Room",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"customerId\": 1, \"date\": \"2024-07-10\", \"startTime\": \"10:00\", \"endTime\": \"12:00\", \"roomId\": 1}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["bookings"]
+        },
+        "description": "Books a room for the specified customer on the given date and time."
+      },
+      "response": []
+    },
+    {
+      "name": "List all Rooms with Booked Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/rooms",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["rooms"]
+        },
+        "description": "Lists all rooms along with their booking data."
+      },
+      "response": []
+    },
+    {
+      "name": "List all Customers with Booked Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/customers/bookings",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers", "bookings"]
+        },
+        "description": "Lists all customers along with their booking data."
+      },
+      "response": []
+    },
+    {
+      "name": "List how many times a Customer has booked the Room",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/customers/:customerId/bookings",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers", ":customerId", "bookings"],
+          "variable": [
+            {
+              "key": "customerId",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "Lists all bookings for a specific customer. Replace `:customerId` with the actual customer ID."
+      },
+      "response": []
+    }
+  ]
+}
