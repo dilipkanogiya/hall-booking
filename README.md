@@ -14,6 +14,8 @@ This project is an API for managing hall bookings. It allows you to create custo
   - [List all Rooms with Booked Data](#list-all-rooms-with-booked-data)
   - [List all Customers with Booked Data](#list-all-customers-with-booked-data)
   - [List Bookings for a Customer](#list-bookings-for-a-customer)
+    
+API Documentation [View](https://documenter.getpostman.com/view/5614417/2sA3e1CWQL)
 
 ## Installation
 
